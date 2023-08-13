@@ -8,6 +8,36 @@ body{
   background-size: cover;
   opacity: 100;
 }
+    .btn {
+            background-color:white;
+            color: black;
+            text-align: center;
+            font-size: 13px;
+         }
+     .btn:hover{
+		background-color:lightgreen;
+		transition: 0.4s;
+		}
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 40px;
+}
+
 </style>
 <script>
         function validate()
@@ -15,51 +45,58 @@ body{
 		var username = document.getElementById('name').value;
 		var username1 = document.getElementById('telnum').value;
 		var username2 = document.getElementById('rollno').value;
-		if (username == "" || username1 == "" || username2 == "") {
+		if (username == " " || username1 == "" || username2 == "") {
 			alert("Please fill in all fields");
 			return false;
 	}
 		if (!/^[a-zA-Z]*$/g.test(name)) {
 			alert("Name fields should only contain letters");
 			return false;
-	}
+		}
+		else if(username==username1)
+		{
 		alert("Welcome "+username);
-		return true;
+		}
         }
     </script>
 </head>
 <center>
-<body background="https://www.newsclick.in/sites/default/files/styles/responsive_885/public/2021-08/Kamaraj0.jpg?itok=PwC5jvBb">
+<body>
+<video id="background-video" autoplay loop muted>
+<source src="pay.mp4" type="video/mp4">
+</video>
+<div class="content">
 
     
 	<h1 style="margin-top:40px; margin-left:350px;">LOGIN PAGE</h1>
     <table style="margin-top:40px; margin-left:350px;">
-        <form name="myForm" action=" center.html">
+        <form name="myForm" action="center.html">
             <tr>
                 <td>
-                   <b><label>Name</label>
+                   <b><label style="color:red;">Name</label>
                 </td>
                 <td><input type="text" id="name" />
                 </td>
             </tr>
             <tr>
-                <td><b><label> Mobile Number</label>
+                <td><b><label style="color:red;">Password</label>
                 </td>
-                <td><input type="number" id="telnum" />
+                <td><input type="password" id="telnum" />
                 </td>
             </tr>
             <tr>
-                <td><b><label>Roll Number </label>
+                <td><b><label style="color:red;">Roll Number </label>
                 </td>
                 <td><input type="text" id="rollno" />
                 </td>
             </tr>
 		<tr>
 		<td>
-			<input type="Submit" value="submit" onclick="validate()">
+			<button class="btn" onclick="validate()">LOG IN</button>
 		</td>
 		</tr>
         </form>
+</div>
 </center>
     </table>
 </body>
