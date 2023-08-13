@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+
+body{
+ background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 100;
+}
+</style>
+<script>
+        function validate()
+        {
+		var username = document.getElementById('name').value;
+		var username1 = document.getElementById('telnum').value;
+		var username2 = document.getElementById('rollno').value;
+		if (username == "" || username1 == "" || username2 == "") {
+			alert("Please fill in all fields");
+			return false;
+	}
+		if (!/^[a-zA-Z]*$/g.test(name)) {
+			alert("Name fields should only contain letters");
+			return false;
+	}
+		alert("Welcome "+username);
+		return true;
+        }
+    </script>
+</head>
+<center>
+<body background="https://www.newsclick.in/sites/default/files/styles/responsive_885/public/2021-08/Kamaraj0.jpg?itok=PwC5jvBb">
+
+    
+	<h1 style="margin-top:40px; margin-left:350px;">LOGIN PAGE</h1>
+    <table style="margin-top:40px; margin-left:350px;">
+        <form name="myForm" action=" center.html">
+            <tr>
+                <td>
+                   <b><label>Name</label>
+                </td>
+                <td><input type="text" id="name" />
+                </td>
+            </tr>
+            <tr>
+                <td><b><label> Mobile Number</label>
+                </td>
+                <td><input type="number" id="telnum" />
+                </td>
+            </tr>
+            <tr>
+                <td><b><label>Roll Number </label>
+                </td>
+                <td><input type="text" id="rollno" />
+                </td>
+            </tr>
+		<tr>
+		<td>
+			<input type="Submit" value="submit" onclick="validate()">
+		</td>
+		</tr>
+        </form>
+</center>
+    </table>
+</body>
+</html>
